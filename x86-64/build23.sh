@@ -6,7 +6,10 @@ LOGFILE="/tmp/uci-defaults-log.txt"
 echo "Starting 99-custom.sh at $(date)" >> $LOGFILE
 echo "编译固件大小为: $PROFILE MB"
 echo "Include Docker: $INCLUDE_DOCKER"
-
+# 首页和网络向导
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-i18n-quickstart-zh-cn"
+# 去广告adghome
+CUSTOM_PACKAGES="$CUSTOM_PACKAGES luci-app-adguardhome"
 echo "Create pppoe-settings"
 mkdir -p  /home/build/immortalwrt/files/etc/config
 
